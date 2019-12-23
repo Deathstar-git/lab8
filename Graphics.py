@@ -4,9 +4,11 @@ from company import Company
 
 class GUI:
     root = Tk()
+    workers = Company.workers
 
-    def __init__(self, root):
+    def __init__(self, workers, root):
         self.root = root
+        self.workers = workers
 
     @staticmethod
     def show_root(root):
@@ -23,5 +25,6 @@ class GUI:
         btn3.pack()
         btn4.pack()
         btn1.bind('<Button-1>', Company(root).command_1)
+        btn2.bind('<Button-1>', Company(root).unification)
         btn4.bind('<Button-1>', Company(root).exit_)
         root.mainloop()
