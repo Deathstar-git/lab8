@@ -23,33 +23,51 @@ class Company:
     def workers(self):
         return self._workers
 
-    def command_1(self, workers, rt):
-        win = Toplevel(rt, relief=SUNKEN, bd=10, bg="lightblue")
+    def command_1(self, event):
+        win = Toplevel(self.rt)
         win.title("Добавление сотрудника")
-        win.minsize(width=400, height=200)
-        ent = Entry(rt, width=100)
-        ent.pack()
-        name_1 = input('Как вас зовут? ')
-        position = input('Какую должность будете занимать? ')
-        if not position.lower() in self._POSITIONS:
-            print('Нет такой должности.')
+        win.minsize(width=600, height=400)
 
-        if position.lower() == 'наемный рабочий' or position.lower() == 'наёмный рабочий':
-            amount = worker.Wageworker.amount
-            duration = work.Wagework.duration
-            self.hire(name_1, position, amount, duration, workers)
-        elif position.lower() == 'почасовой рабочий':
-            amount = worker.Hourlyworker.amount
-            duration = work.Hourlywork.duration
-            self.hire(name_1, position, amount, duration, workers)
-        elif position.lower() == 'менеджер':
-            amount = worker.Manager.amount
-            duration = work.ManagerWork.duration
-            self.hire(name_1, position, amount, duration, workers)
-        elif position.lower() == 'руководитель':
-            amount = worker.Supervisor.amount
-            duration = work.SupervisorWork.duration
-            self.hire(name_1, position, amount, duration, workers)
+        def caption(evnt):
+            name_1 = name.get()
+            position = pos.get()
+            if not position.lower() in self._POSITIONS and not position == '':
+                lab_no = Label(win, font=("Verdana", 14, "bold"), text="Нет такой должности")
+                lab_no.pack()
+
+            if position.lower() == 'наемный рабочий' or position.lower() == 'наёмный рабочий':
+                amount = worker.Wageworker.amount
+                duration = work.Wagework.duration
+                self.hire(name_1, position, amount, duration, self.workers)
+            elif position.lower() == 'почасовой рабочий':
+                amount = worker.Hourlyworker.amount
+                duration = work.Hourlywork.duration
+                self.hire(name_1, position, amount, duration, self.workers)
+            elif position.lower() == 'менеджер':
+                amount = worker.Manager.amount
+                duration = work.ManagerWork.duration
+                self.hire(name_1, position, amount, duration, self.workers)
+            elif position.lower() == 'руководитель':
+                amount = worker.Supervisor.amount
+                duration = work.SupervisorWork.duration
+                self.hire(name_1, position, amount, duration, self.workers)
+
+            del evnt
+
+        name = StringVar()
+        pos = StringVar()
+        ent = Entry(win, width=60, textvariable=name, font=("Verdana", 14, "bold"))
+        ent2 = Entry(win, width=60, textvariable=pos, font=("Verdana", 14, "bold"))
+        lab = Label(win, text="Введите имя нового сотрудника:", font=("Verdana", 14, "bold"))
+        lab2 = Label(win, text="Введите должность:", font=("Verdana", 14, "bold"))
+        btn = Button(win, text="Добавить сотрудника")
+        btn.bind('<Button-1>', caption)
+        lab.pack()
+        ent.pack()
+        lab2.pack()
+        ent2.pack()
+        btn.pack()
+        del event
 
     @staticmethod
     def command_2(workers):

@@ -3,11 +3,13 @@ from tkinter import *
 
 def exit_(event):
     root.destroy()
+    del event
 
 
 def caption(event):
     t = ent.get()
     lbl.configure(text=t)
+    del event
 
 
 root = Tk()
