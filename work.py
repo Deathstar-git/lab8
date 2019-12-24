@@ -1,3 +1,6 @@
+from tkinter import *
+
+
 class Work:
     _duration = ' '
 
@@ -44,20 +47,20 @@ class SupervisorWork(Work):
 class CurrentWork:
 
     @staticmethod
-    def unification(workers):
+    def unification(workers, rt):
+        win = Toplevel(rt)
+        win.title("Информация о сотрудниках")
+        win.minsize(width=600, height=400)
+        lab_err = Label(win, font=("Verdana", 14, "bold"), text="Cписок сотрудников пуст", foreground="#FF0000")
+        lab1 = Label(win, font=("Verdana", 20, "bold"), text="Текущие сотрудники:", foreground="#0000FF")
         workers_list = []
         if not workers:
-            print("Список сотрудников пуст.")
+            lab_err.pack()
         else:
+            lab1.pack()
             for j in range(len(workers)):
                 workers_list.append("Сотрудник №" + str(j+1))
-            print("Текущие сотрудники:")
-            print(workers_list)
-            i = int(input("Введите номер сотрудника:"))
-            if 1 <= i <= len(workers):
-                work = workers[i - 1].position
-                name = workers[i - 1].name
-                print(f'ФИО:{name}')
-                print(f'Текущая должность:{work}')
-            else:
-                print("Номер сотрудника не распознан.")
+                t = workers_list[-1]
+                lab_list = Label(win, font=("Verdana", 14, "bold"))
+                lab_list.configure(text=t)
+                lab_list.pack()
