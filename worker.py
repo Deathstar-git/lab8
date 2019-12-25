@@ -11,9 +11,8 @@ class Worker:
 		self._amount = amount
 
 	def __str__(self):
-		string = f'Работник по имени {self._name} имеет должность: {self._position}. '
-		if self._position != 'Безработный':
-			string += f'А зарабатывает он {self._amount}, работая в компании: {self._company}.'
+		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
 		return string
 
 	@property
@@ -52,8 +51,8 @@ class Wageworker(Worker):
 		super().__init__(name, company, amount, position)
 
 	def __str__(self):
-		string = f'Работник по имени {self._name} имеет должность:{self._position},'
-		string += f'зарплата:{self.amount},компания: {self._company}.'
+		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
 		return string
 
 
@@ -64,8 +63,8 @@ class Hourlyworker(Worker):
 		super().__init__(name, company, amount, position)
 
 	def __str__(self):
-		string = f'Работник по имени {self._name} имеет должность:{self._position},'
-		string += f'зарплата:{self.amount},компания: {self._company}.'
+		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
 		return string
 
 	@staticmethod
@@ -83,8 +82,8 @@ class Manager(Worker):
 		super().__init__(name=name, company=company, amount=amount, position=position)
 
 	def __str__(self):
-		string = f'Работник по имени {self._name} имеет должность:{self._position},'
-		string += f'зарплата:{self.amount},компания: {self._company}.'
+		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
 		return string
 
 
@@ -95,6 +94,6 @@ class Supervisor(Worker):
 		super().__init__(name, company, amount, position)
 
 	def __str__(self):
-		string = f'Работник по имени {self._name} имеет должность:{self._position},'
-		string += f'зарплата:{self.amount},компания: {self._company}.'
+		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
 		return string

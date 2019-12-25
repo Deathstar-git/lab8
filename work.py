@@ -58,9 +58,30 @@ class CurrentWork:
             lab_err.pack()
         else:
             lab1.pack()
+            xt = "Кол-во текущих сотрудников:" + str(len(workers))
+            lab_curr = Label(win, text=xt, font=("Verdana", 14, "bold"), foreground="#FF7F50")
+            lab_curr.pack()
+
             for j in range(len(workers)):
                 workers_list.append("Сотрудник №" + str(j+1))
-                t = workers_list[-1]
-                lab_list = Label(win, font=("Verdana", 14, "bold"))
-                lab_list.configure(text=t)
+
+            i_var = IntVar()
+            ent = Entry(win, width=60, textvariable=i_var, font=("Verdana", 14, "bold"))
+            i = i_var.get()
+
+            def caption(evnt):
+                lab_work = Label(win, text=tx, font=("Verdana", 14, "bold"))
+                lab_list = Label(win, text=t, font=("Verdana", 14, "bold"), foreground="#FF7F50")
                 lab_list.pack()
+                lab_work.pack()
+                del evnt
+
+            t = workers_list[i-1]
+            tx = workers[i-1]
+            lab_ent = Label(win, text="Введите номер сотрудника", font=("Verdana", 14, "bold"), foreground="#FF7F50")
+
+            btn = Button(win, text="Показать сотрудника", font=("Verdana", 10))
+            btn.bind('<Button-1>', caption)
+            lab_ent.pack()
+            ent.pack()
+            btn.pack()

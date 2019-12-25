@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6715649e-e456-4e8a-819c-505049538f13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/company.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work.py" beforeDir="false" afterPath="$PROJECT_DIR$/work.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/worker.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab7_2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -135,7 +135,8 @@
       <workItem from="1577085343559" duration="19092000" />
       <workItem from="1577137426588" duration="10472000" />
       <workItem from="1577169302530" duration="876000" />
-      <workItem from="1577195989359" duration="2676000" />
+      <workItem from="1577195989359" duration="3994000" />
+      <workItem from="1577267724464" duration="3460000" />
     </task>
     <task id="LOCAL-00001" summary="Starter root window with exit(without code 1 :) )">
       <created>1577094780875</created>
@@ -144,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577094780875</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Starter root window with exit and show workers list(without code 1 :) )">
+      <created>1577199114217</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1577199114217</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,10 +173,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Starter root window with exit(without code 1 :) )" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starter root window with exit(without code 1 :) )" />
+    <MESSAGE value="Starter root window with exit and show workers list(without code 1 :) )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starter root window with exit and show workers list(without code 1 :) )" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/prog8$main.coverage" NAME="main Coverage Results" MODIFIED="1577198843804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/prog8$main.coverage" NAME="main Coverage Results" MODIFIED="1577271379289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab7_2$main.coverage" NAME="main Coverage Results" MODIFIED="1577048079461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/prog8$test.coverage" NAME="test Coverage Results" MODIFIED="1577098059094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/prog8$company.coverage" NAME="company Coverage Results" MODIFIED="1577098063724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

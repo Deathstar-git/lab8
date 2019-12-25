@@ -71,11 +71,14 @@ class Company:
         lab_success = Label(win, text="Сотрудник успешно добавлен", font=("Verdana", 14, "bold"), foreground="#008000")
         lab = Label(win, text="Введите имя нового сотрудника:", font=("Verdana", 14, "bold"))
         lab2 = Label(win, text="Введите должность:", font=("Verdana", 14, "bold"))
-        btn = Button(win, text="Добавить сотрудника")
+        t = "(Руководитель,Менеджер,Почасовой рабочий,Наемный рабочий)"
+        lab_info = Label(win, text=t, font=("Verdana", 12, "bold"))
+        btn = Button(win, text="Добавить сотрудника", font=("Verdana", 10))
         btn.bind('<Button-1>', caption)
         lab.pack()
         ent.pack()
         lab2.pack()
+        lab_info.pack()
         ent2.pack()
         btn.pack()
         del event
@@ -86,7 +89,6 @@ class Company:
         worker.Hourlyworker.hourly_pay(amnt)
 
     def hire(self, name, position, amount, duration, workers):
-        print(f'Добро пожаловать в нашу компанию, {name}.')
         self.add_worker(name, position, amount, duration, workers)
 
     def add_worker(self, name, position, amount, duration, workers):
@@ -98,23 +100,8 @@ class Company:
             workers.append(worker.Manager(name, self.name))
         elif position.lower() == 'руководитель':
             workers.append(worker.Supervisor(name, self.name))
-        self.show_info(name, position, amount, duration, workers)
-
-    @staticmethod
-    def show_info(name, position, amount, duration, workers):
-        print(f"Добавлен новый рабочий:{name}.")
-        print(f"Должность:{position}")
-        if position.lower() == 'почасовой рабочий':
-            print(f"Почасовая оплата:{amount} руб/ч")
-        else:
-            print(f"Зарплата:{amount}р.")
-        print(f'Деятельность:{duration}')
-        print("Все работники:")
-        for i in range(len(workers)):
-            print(str(workers[i]))
 
     def command_2(self, event):
-        print(self.workers)
         work.CurrentWork.unification(self.workers, self.rt)
         del event
 
