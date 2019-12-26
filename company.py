@@ -40,27 +40,23 @@ class Company:
             if not position.lower() in self._POSITIONS and not position == '':
                 lab_no = Label(win, font=("Verdana", 14, "bold"), text="Нет такой должности", foreground="#FF0000")
                 lab_no.pack()
-
-            if position.lower() == 'наемный рабочий' or position.lower() == 'наёмный рабочий':
-                amount = worker.Wageworker.amount
-                duration = work.Wagework.duration
-                self.hire(name_1, position, amount, duration, self.workers)
-                lab_success.pack()
-            elif position.lower() == 'почасовой рабочий':
-                amount = worker.Hourlyworker.amount
-                duration = work.Hourlywork.duration
-                self.hire(name_1, position, amount, duration, self.workers)
-                lab_success.pack()
-            elif position.lower() == 'менеджер':
-                amount = worker.Manager.amount
-                duration = work.ManagerWork.duration
-                self.hire(name_1, position, amount, duration, self.workers)
-                lab_success.pack()
-            elif position.lower() == 'руководитель':
-                amount = worker.Supervisor.amount
-                duration = work.SupervisorWork.duration
-                self.hire(name_1, position, amount, duration, self.workers)
-                lab_success.pack()
+            if any(map(str.isdigit, name_1)):
+                label_exc = Label(win, font=("Verdana", 14, "bold"),
+                                  text="Не добавляйте цифру в ФИО!", foreground="#FF0000")
+                label_exc.pack()
+            else:
+                if position.lower() == 'наемный рабочий' or position.lower() == 'наёмный рабочий':
+                    self.hire(name_1, position, self.workers)
+                    lab_success.pack()
+                elif position.lower() == 'почасовой рабочий':
+                    self.hire(name_1, position, self.workers)
+                    lab_success.pack()
+                elif position.lower() == 'менеджер':
+                    self.hire(name_1, position, self.workers)
+                    lab_success.pack()
+                elif position.lower() == 'руководитель':
+                    self.hire(name_1, position, self.workers)
+                    lab_success.pack()
 
             del evnt
 
@@ -69,7 +65,7 @@ class Company:
         ent = Entry(win, width=60, textvariable=name, font=("Verdana", 14, "bold"))
         ent2 = Entry(win, width=60, textvariable=pos, font=("Verdana", 14, "bold"))
         lab_success = Label(win, text="Сотрудник успешно добавлен", font=("Verdana", 14, "bold"), foreground="#008000")
-        lab = Label(win, text="Введите имя нового сотрудника:", font=("Verdana", 14, "bold"))
+        lab = Label(win, text="Введите ФИО нового сотрудника:", font=("Verdana", 14, "bold"))
         lab2 = Label(win, text="Введите должность:", font=("Verdana", 14, "bold"))
         t = "(Руководитель,Менеджер,Почасовой рабочий,Наемный рабочий)"
         lab_info = Label(win, text=t, font=("Verdana", 12, "bold"))
@@ -83,15 +79,42 @@ class Company:
         btn.pack()
         del event
 
-    @staticmethod
-    def command_3():
+    def command_3(self, event):
         amnt = worker.Hourlyworker.amount
-        worker.Hourlyworker.hourly_pay(amnt)
+        win = Toplevel(self.rt)
+        win.title("Добавление сотрудника")
+        win.minsize(width=600, height=400)
 
-    def hire(self, name, position, amount, duration, workers):
-        self.add_worker(name, position, amount, duration, workers)
+        def caption(evnt):
+            h = ent.get()
+            if h.isdigit():
+                payment = int(amnt) * int(h)
+                txt = f'Ваша оплата составит {payment}р.'
+                lab_info = Label(win, text=txt, font=("Verdana", 14, "bold"))
+                lab_info.pack()
+            else:
+                lab_err = Label(win, text="Введите корректное кол.во часов", font=("Verdana", 14, "bold"),
+                                foreground="#FF0000")
+                lab_err.pack()
+            del evnt
 
-    def add_worker(self, name, position, amount, duration, workers):
+        h1 = IntVar
+        lab = Label(win, text="Сколько часов вы отработали?", font=("Verdana", 14, "bold"))
+        lab2 = Label(win, text="Введите кол.во часов:", font=("Verdana", 12, "bold"))
+        ent = Entry(win, width=60, textvariable=h1, font=("Verdana", 14, "bold"))
+        btn = Button(win, text="Вычислить", font=("Verdana", 10), foreground="#4682B4")
+        btn.bind('<Button-1>', caption)
+        ent.bind('<Return>', caption)
+        lab.pack()
+        lab2.pack()
+        ent.pack()
+        btn.pack()
+        del event
+
+    def hire(self, name, position, workers):
+        self.add_worker(name, position, workers)
+
+    def add_worker(self, name, position, workers):
         if position.lower() == 'наемный рабочий' or position.lower() == 'наёмный рабочий':
             workers.append(worker.Wageworker(name, self.name))
         elif position.lower() == 'почасовой рабочий':

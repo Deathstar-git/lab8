@@ -63,24 +63,31 @@ class CurrentWork:
             lab_curr.pack()
 
             for j in range(len(workers)):
-                workers_list.append("Сотрудник №" + str(j+1))
+                workers_list.append("Сотрудник №" + str(j + 1))
 
             i_var = IntVar()
             ent = Entry(win, width=60, textvariable=i_var, font=("Verdana", 14, "bold"))
-            i = i_var.get()
 
             def caption(evnt):
-                lab_work = Label(win, text=tx, font=("Verdana", 14, "bold"))
-                lab_list = Label(win, text=t, font=("Verdana", 14, "bold"), foreground="#FF7F50")
-                lab_list.pack()
-                lab_work.pack()
+                i = i_var.get()
+                if i > len(workers) or i == 0:
+                    l_exc = Label(win, font=("Verdana", 14, "bold"), text="Сотрудника с таким номером нет",
+                                  foreground="#FF0000")
+                    l_exc.pack()
+                else:
+                    t = workers_list[i - 1]
+                    tx = workers[i - 1]
+                    lab_work = Label(win, font=("Verdana", 14, "bold"))
+                    lab_list = Label(win, font=("Verdana", 14, "bold"), foreground="#FF7F50")
+                    lab_work.configure(text=tx)
+                    lab_list.configure(text=t)
+                    lab_list.pack()
+                    lab_work.pack()
+
                 del evnt
 
-            t = workers_list[i-1]
-            tx = workers[i-1]
-            lab_ent = Label(win, text="Введите номер сотрудника", font=("Verdana", 14, "bold"), foreground="#FF7F50")
-
-            btn = Button(win, text="Показать сотрудника", font=("Verdana", 10))
+            lab_ent = Label(win, text="Введите номер сотрудника:", font=("Verdana", 14, "bold"), foreground="#FF7F50")
+            btn = Button(win, text="Показать сотрудника", font=("Verdana", 10), foreground="#4682B4")
             btn.bind('<Button-1>', caption)
             lab_ent.pack()
             ent.pack()

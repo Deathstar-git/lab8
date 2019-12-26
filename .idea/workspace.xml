@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6715649e-e456-4e8a-819c-505049538f13" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Graphics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/company.py" beforeDir="false" afterPath="$PROJECT_DIR$/company.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/work.py" beforeDir="false" afterPath="$PROJECT_DIR$/work.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/worker.py" afterDir="false" />
@@ -137,6 +138,12 @@
       <workItem from="1577169302530" duration="876000" />
       <workItem from="1577195989359" duration="3994000" />
       <workItem from="1577267724464" duration="3460000" />
+      <workItem from="1577273019864" duration="6143000" />
+      <workItem from="1577299303559" duration="2432000" />
+      <workItem from="1577306895870" duration="2421000" />
+      <workItem from="1577350646014" duration="117000" />
+      <workItem from="1577351953744" duration="1053000" />
+      <workItem from="1577357861064" duration="2744000" />
     </task>
     <task id="LOCAL-00001" summary="Starter root window with exit(without code 1 :) )">
       <created>1577094780875</created>
@@ -177,7 +184,7 @@
     <option name="LAST_COMMIT_MESSAGE" value="Starter root window with exit and show workers list(without code 1 :) )" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/prog8$main.coverage" NAME="main Coverage Results" MODIFIED="1577271379289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/prog8$main.coverage" NAME="main Coverage Results" MODIFIED="1577370749358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab7_2$main.coverage" NAME="main Coverage Results" MODIFIED="1577048079461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/prog8$test.coverage" NAME="test Coverage Results" MODIFIED="1577098059094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/prog8$company.coverage" NAME="company Coverage Results" MODIFIED="1577098063724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

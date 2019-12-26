@@ -1,99 +1,99 @@
 class Worker:
-	_name = ''
-	_position = ''
-	_company = 'Мебель-Хаус'
-	_amount = 0
+    _name = ''
+    _position = ''
+    _company = 'Мебель-Хаус'
+    _amount = 0
 
-	def __init__(self, name, company, amount=0, position=''):
-		self._name = name
-		self._position = position
-		self._company = company
-		self._amount = amount
+    def __init__(self, name, company, amount=0, position=''):
+        self._name = name
+        self._position = position
+        self._company = company
+        self._amount = amount
 
-	def __str__(self):
-		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
-		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
-		return string
+    def __str__(self):
+        string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+        string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
+        return string
 
-	@property
-	def name(self):
-		return self._name
+    @property
+    def name(self):
+        return self._name
 
-	@property
-	def position(self):
-		return self._position
+    @property
+    def position(self):
+        return self._position
 
-	@property
-	def amount(self):
-		return self.amount
+    @property
+    def amount(self):
+        return self.amount
 
-	@property
-	def company(self):
-		return self._company
+    @property
+    def company(self):
+        return self._company
 
-	@position.setter
-	def position(self, pos):
-		self._position = pos
+    @position.setter
+    def position(self, pos):
+        self._position = pos
 
-	@amount.setter
-	def amount(self, amount):
-		self.amount = amount
+    @amount.setter
+    def amount(self, amount):
+        self.amount = amount
 
-	@company.setter
-	def company(self, com):
-		self._company = com
+    @company.setter
+    def company(self, com):
+        self._company = com
 
 
 class Wageworker(Worker):
-	amount = 25000
+    amount = 25000
 
-	def __init__(self, name, amount, company='Мебель-Хаус', position='Наемный рабочий'):
-		super().__init__(name, company, amount, position)
+    def __init__(self, name, amount, company='Мебель-Хаус', position='Наемный рабочий'):
+        super().__init__(name, company, amount, position)
 
-	def __str__(self):
-		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
-		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
-		return string
+    def __str__(self):
+        string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+        string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
+        return string
 
 
 class Hourlyworker(Worker):
-	amount = 150
+    amount = 150
 
-	def __init__(self, name, amount, company='Мебель-Хаус', position='Почасовой рабочий'):
-		super().__init__(name, company, amount, position)
+    def __init__(self, name, amount, company='Мебель-Хаус', position='Почасовой рабочий'):
+        super().__init__(name, company, amount, position)
 
-	def __str__(self):
-		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
-		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
-		return string
+    def __str__(self):
+        string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+        string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
+        return string
 
-	@staticmethod
-	def hourly_pay(amount):
-		print("Сколько часов вы отработали?")
-		h = int(input("Введите кол-во часов:"))
-		payment = amount*h
-		print(f'Ваша выплата составит {payment}р.')
+    @staticmethod
+    def hourly_pay(amount):
+        print("Сколько часов вы отработали?")
+        h = int(input("Введите кол-во часов:"))
+        payment = amount * h
+        print(f'Ваша выплата составит {payment}р.')
 
 
 class Manager(Worker):
-	amount = 20000
+    amount = 20000
 
-	def __init__(self, name, amount, company='Мебель-Хаус', position='Менеджер'):
-		super().__init__(name=name, company=company, amount=amount, position=position)
+    def __init__(self, name, amount, company='Мебель-Хаус', position='Менеджер'):
+        super().__init__(name=name, company=company, amount=amount, position=position)
 
-	def __str__(self):
-		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
-		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
-		return string
+    def __str__(self):
+        string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+        string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
+        return string
 
 
 class Supervisor(Worker):
-	amount = 45000
+    amount = 45000
 
-	def __init__(self, name, amount, company='Мебель-Хаус', position='Руководитель'):
-		super().__init__(name, company, amount, position)
+    def __init__(self, name, amount, company='Мебель-Хаус', position='Руководитель'):
+        super().__init__(name, company, amount, position)
 
-	def __str__(self):
-		string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
-		string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
-		return string
+    def __str__(self):
+        string = f'| Работник:{self._name} | \nДолжность:{self._position}\n'
+        string += f'Зарплата:{self.amount}\nКомпания: {self._company}.'
+        return string

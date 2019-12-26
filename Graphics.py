@@ -24,5 +24,6 @@ class GUI:
         btn4.pack()
         btn1.bind('<Button-1>', Company(root).command_1)
         btn2.bind('<Button-1>', Company(root).command_2)
+        btn3.bind('<Button-1>', Company(root).command_3)
         btn4.bind('<Button-1>', Company(root).exit_)
         root.mainloop()
