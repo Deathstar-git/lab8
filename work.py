@@ -65,24 +65,30 @@ class CurrentWork:
             for j in range(len(workers)):
                 workers_list.append("Сотрудник №" + str(j + 1))
 
-            i_var = IntVar()
+            i_var = StringVar()
             ent = Entry(win, width=60, textvariable=i_var, font=("Verdana", 14, "bold"))
 
             def caption(evnt):
-                i = i_var.get()
-                if i > len(workers) or i == 0:
-                    l_exc = Label(win, font=("Verdana", 14, "bold"), text="Сотрудника с таким номером нет",
-                                  foreground="#FF0000")
-                    l_exc.pack()
+                check = i_var.get()
+                if not check.isdigit():
+                    l_error = Label(win, font=("Verdana", 14, "bold"), text="Введите корректный номер сотрудника",
+                                    foreground="#FF0000")
+                    l_error.pack()
                 else:
-                    t = workers_list[i - 1]
-                    tx = workers[i - 1]
-                    lab_work = Label(win, font=("Verdana", 14, "bold"))
-                    lab_list = Label(win, font=("Verdana", 14, "bold"), foreground="#FF7F50")
-                    lab_work.configure(text=tx)
-                    lab_list.configure(text=t)
-                    lab_list.pack()
-                    lab_work.pack()
+                    i = int(i_var.get())
+                    if i > len(workers) or i == 0:
+                        l_exc = Label(win, font=("Verdana", 14, "bold"), text="Сотрудника с таким номером нет",
+                                      foreground="#FF0000")
+                        l_exc.pack()
+                    else:
+                        t = workers_list[i - 1]
+                        tx = workers[i - 1]
+                        lab_work = Label(win, font=("Verdana", 14, "bold"))
+                        lab_list = Label(win, font=("Verdana", 14, "bold"), foreground="#FF7F50")
+                        lab_work.configure(text=tx)
+                        lab_list.configure(text=t)
+                        lab_list.pack()
+                        lab_work.pack()
 
                 del evnt
 
